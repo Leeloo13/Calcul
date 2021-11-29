@@ -1,0 +1,78 @@
+body{
+    margin:0;
+}
+
+
+#Feuille{background-color: rgba(48, 48, 173, 0.404);
+    width: 30%;
+    border: 2px solid  black;
+    padding: 10%;
+    font-size: 50px;
+    font-style: bold;
+    display: flex;
+    margin: auto;
+    margin-top: 150px;
+}
+
+#calcul{
+    display: flex ;
+}
+
+#number1, #number2, #button, input{
+    margin: auto;
+}
+
+#number1, #number2{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+input{
+    font-size: 40px;
+    width: 80px;
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#button{
+    font-size:40%;
+    padding: 10px;  
+    background: linear-gradient(45deg,rgb(11, 133, 214), rgb(151, 207, 198) );  
+    border:none;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px black;
+    margin-left: 10px;
+
+}
+
+
+#Resultat{
+    width: 40%;
+    font-size: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top:-90px;
+   
+}
+
+@media screen and (max-width: 640px){
+#Feuille{
+    flex-wrap: wrap;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+#Resultat{background-color: cyan;
+    font-size: 30px;
+    margin-top: 5px;
+}
+}

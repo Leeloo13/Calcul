@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=' stylesheet' href='Operation.css'>
+    <title>Multiplication</title>
+</head>
+<body>
+   
+
+    <div id = "Feuille">
+        <div id = "calcul">
+           
+        </div>
+    <input id ="choix_utilisateur" type="number" >
+     
+    <button id="button">Valider</button>      
+    </div>
+
+    <div id = "Resultat">Résultat</div>
+
+
+
+    <script>
+              
+        var button = document.getElementById('button'); 
+        var number1 = 1;
+        var number2 = 2;
+        var result = 0;
+        var randomRange = 10;
+        
+
+        /*calculChiffre = function(){
+            number1 = Math.floor(Math.random()*randomRange);
+            number2 = Math.floor(Math.random()*randomRange);
+     
+        }
+        
+        calculChiffre();*/
+
+        addNumber = function(){
+             
+            number1 = Math.floor(Math.random()*randomRange);
+            number2 = Math.floor(Math.random()*randomRange);
+
+            document.getElementById('calcul').innerHTML = `
+            <div id ="number1">${number1}</div>
+            x
+            <div id ="number2">${number2}</div>
+            = 
+            `
+            result = number1 * number2
+          
+            console.log(result);
+
+        }
+        addNumber()
+
+
+          onButtonclick = function(){  
+            
+           var choix_utilisateur = parseFloat(document.getElementById('choix_utilisateur').value);
+            
+           console.log(choix_utilisateur);
+
+            if( choix_utilisateur == result ){
+                               
+                document.getElementById('Resultat').innerHTML = 'Correct' 
+                document.getElementById('Resultat').style.color = 'green' 
+                document.getElementById('Resultat').style.fontWeight = 'bold' 
+                addNumber()
+            }
+
+            
+
+            else{
+                document.getElementById('Resultat').innerHTML = 'Pas encore'
+                document.getElementById('Resultat').style.color = 'red' 
+                document.getElementById('Resultat').style.fontWeight = 'bold'
+            }
+
+                      
+           
+
+            };
+                   
+           button.addEventListener('click', onButtonclick);
+
+    </script>
+   
+</body>
+</html>
