@@ -6,20 +6,28 @@
     <link rel=' stylesheet' href='Operation.css'>
     <title>Multiplication</title>
 </head>
+
 <body>
+
+   <!--- <header>
+        <div id = "nav">
+                <a href="">Additions</a>
+                <a href="">Multiplications</a>
+                <a href="">Soustractions</a>
+                <a href="">Divisions</a>       
+        </div>
+    </header>-->
    
 
     <div id = "Feuille">
         <div id = "calcul">
-           
+        </div>        
+        <input id ="choix_utilisateur" type="number">        
+        <button id="button">Valider</button>
+        </div>    
+        <div id = "container-resultat">
+            <div id = "Resultat">Résultat</div>
         </div>
-    <input id ="choix_utilisateur" type="number" >
-     
-    <button id="button">Valider</button>      
-    </div>
-
-    <div id = "Resultat">Résultat</div>
-
 
 
     <script>
@@ -31,13 +39,7 @@
         var randomRange = 10;
         
 
-        /*calculChiffre = function(){
-            number1 = Math.floor(Math.random()*randomRange);
-            number2 = Math.floor(Math.random()*randomRange);
-     
-        }
-        
-        calculChiffre();*/
+       
 
         addNumber = function(){
              
@@ -66,9 +68,17 @@
 
             if( choix_utilisateur == result ){
                                
-                document.getElementById('Resultat').innerHTML = 'Correct' 
+                document.getElementById('Resultat').innerHTML = 'Correct !' 
                 document.getElementById('Resultat').style.color = 'green' 
-                document.getElementById('Resultat').style.fontWeight = 'bold' 
+                document.getElementById('Resultat').style.fontWeight = 'bold'
+
+                setTimeout (function(){
+                    document.getElementById('container-resultat').innerHTML = `
+                    <div id = "Resultat">Résultat</div>
+                    `; 
+                },700);
+
+
                 addNumber()
             }
 
@@ -78,11 +88,16 @@
                 document.getElementById('Resultat').innerHTML = 'Pas encore'
                 document.getElementById('Resultat').style.color = 'red' 
                 document.getElementById('Resultat').style.fontWeight = 'bold'
+
+                setTimeout (function(){
+                    document.getElementById('container-resultat').innerHTML = `
+                    <div id = "Resultat">Résultat</div>
+                    `; 
+                },700);
             }
 
                       
-           
-
+            document.getElementById('choix_utilisateur').value = '';
             };
                    
            button.addEventListener('click', onButtonclick);
